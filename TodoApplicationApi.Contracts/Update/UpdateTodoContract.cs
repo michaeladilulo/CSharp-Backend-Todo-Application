@@ -7,7 +7,6 @@ namespace TodoApplicationApi.TodoApplicationApi.Contracts.Update
 	{
 
 		[Required]
-
 		public int Id { get; set; }
 
 	}
