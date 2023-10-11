@@ -13,11 +13,11 @@ namespace TodoApplicationApi.TodoApplicationApi.Service.Controllers;
 public class TodoController : ControllerBase
 {
 
-	private readonly TodoInterface _todoInterface;
+	private readonly TodoInterface _todoService;
 
-	public TodoController(TodoInterface todoInterface)
+	public TodoController(TodoInterface todoService)
 	{
-		_todoInterface = todoInterface;
+		_todoService = todoService;
 	}
 
 	[HttpGet]
@@ -28,7 +28,7 @@ public class TodoController : ControllerBase
 
 		try
 		{
-			List<Todo> todos = await _todoInterface.GetAllTodosAsync();
+			List<Todo> todos = await _todoService.GetAllTodosAsync();
 
 			response.Data = todos;
 			response.Success = true;
