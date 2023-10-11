@@ -11,24 +11,50 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="TodoApplicationApi.Business\" />
-    <None Remove="TodoApplicationApi.Business\TodoService\" />
     <None Remove="TodoApplicationApi.Contracts\" />
     <None Remove="TodoApplicationApi.Contracts\Base\" />
     <None Remove="TodoApplicationApi.Contracts\Create\" />
     <None Remove="TodoApplicationApi.Contracts\Delete\" />
     <None Remove="TodoApplicationApi.Contracts\Update\" />
+    <None Remove="TodoApplicationApi.Data\" />
+    <None Remove="TodoApplicationApi.Data\Repository\" />
+    <None Remove="TodoApplicationApi.DataModel\" />
+    <None Remove="TodoApplicationApi.DataModel\Models\" />
+    <None Remove="TodoApplicationApi.Exceptions\" />
+    <None Remove="TodoApplicationApi.Interfaces\" />
+    <None Remove="TodoApplicationApi.Interfaces\Todo\" />
+    <None Remove="TodoApplicationApi.Interfaces\Repositories\" />
+    <None Remove="TodoApplicationApi.Service\" />
+    <None Remove="TodoApplicationApi.Service\Controllers\" />
+    <None Remove="TodoApplicationApi.Business\Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TodoApplicationApi.Business\" />
-    <Folder Include="TodoApplicationApi.Business\TodoService\" />
     <Folder Include="TodoApplicationApi.Contracts\" />
     <Folder Include="TodoApplicationApi.Contracts\Base\" />
     <Folder Include="TodoApplicationApi.Contracts\Create\" />
     <Folder Include="TodoApplicationApi.Contracts\Delete\" />
     <Folder Include="TodoApplicationApi.Contracts\Update\" />
+    <Folder Include="TodoApplicationApi.Data\" />
+    <Folder Include="TodoApplicationApi.Data\Repository\" />
+    <Folder Include="TodoApplicationApi.DataModel\" />
+    <Folder Include="TodoApplicationApi.DataModel\Models\" />
+    <Folder Include="TodoApplicationApi.Exceptions\" />
+    <Folder Include="TodoApplicationApi.Interfaces\" />
+    <Folder Include="TodoApplicationApi.Interfaces\Todo\" />
+    <Folder Include="TodoApplicationApi.Interfaces\Repositories\" />
+    <Folder Include="TodoApplicationApi.Service\" />
+    <Folder Include="TodoApplicationApi.Service\Controllers\" />
+    <Folder Include="TodoApplicationApi.Business\Services\" />
   </ItemGroup>
 </Project>
