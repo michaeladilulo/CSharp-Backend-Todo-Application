@@ -32,11 +32,11 @@
     <None Remove="TodoApplicationApi.DataModel\Models\" />
     <None Remove="TodoApplicationApi.Exceptions\" />
     <None Remove="TodoApplicationApi.Interfaces\" />
-    <None Remove="TodoApplicationApi.Interfaces\Todo\" />
     <None Remove="TodoApplicationApi.Interfaces\Repositories\" />
     <None Remove="TodoApplicationApi.Service\" />
     <None Remove="TodoApplicationApi.Service\Controllers\" />
     <None Remove="TodoApplicationApi.Business\Services\" />
+    <None Remove="TodoApplicationApi.Interfaces\TodoInterfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TodoApplicationApi.Business\" />
@@ -51,10 +51,10 @@
     <Folder Include="TodoApplicationApi.DataModel\Models\" />
     <Folder Include="TodoApplicationApi.Exceptions\" />
     <Folder Include="TodoApplicationApi.Interfaces\" />
-    <Folder Include="TodoApplicationApi.Interfaces\Todo\" />
     <Folder Include="TodoApplicationApi.Interfaces\Repositories\" />
     <Folder Include="TodoApplicationApi.Service\" />
     <Folder Include="TodoApplicationApi.Service\Controllers\" />
     <Folder Include="TodoApplicationApi.Business\Services\" />
+    <Folder Include="TodoApplicationApi.Interfaces\TodoInterfaces\" />
   </ItemGroup>
 </Project>
