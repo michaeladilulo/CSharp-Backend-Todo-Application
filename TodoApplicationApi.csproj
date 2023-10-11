@@ -16,9 +16,19 @@
   <ItemGroup>
     <None Remove="TodoApplicationApi.Business\" />
     <None Remove="TodoApplicationApi.Business\TodoService\" />
+    <None Remove="TodoApplicationApi.Contracts\" />
+    <None Remove="TodoApplicationApi.Contracts\Base\" />
+    <None Remove="TodoApplicationApi.Contracts\Create\" />
+    <None Remove="TodoApplicationApi.Contracts\Delete\" />
+    <None Remove="TodoApplicationApi.Contracts\Update\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TodoApplicationApi.Business\" />
     <Folder Include="TodoApplicationApi.Business\TodoService\" />
+    <Folder Include="TodoApplicationApi.Contracts\" />
+    <Folder Include="TodoApplicationApi.Contracts\Base\" />
+    <Folder Include="TodoApplicationApi.Contracts\Create\" />
+    <Folder Include="TodoApplicationApi.Contracts\Delete\" />
+    <Folder Include="TodoApplicationApi.Contracts\Update\" />
   </ItemGroup>
 </Project>
