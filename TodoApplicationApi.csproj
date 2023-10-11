@@ -13,4 +13,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="TodoApplicationApi.Business\" />
+    <None Remove="TodoApplicationApi.Business\TodoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TodoApplicationApi.Business\" />
+    <Folder Include="TodoApplicationApi.Business\TodoService\" />
+  </ItemGroup>
 </Project>
