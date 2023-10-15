@@ -31,9 +31,9 @@ public class TodoRepository : ITodoRepository
         return await _context.Todos.ToListAsync();
     }
 
-    public Task<Todo> GetTodoByIdAsync(int id)
+    public async Task<Todo> GetTodoByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _context.Todos.FindAsync(id);
     }
 
     public Task<Todo> UpdateTodoAsync(Todo todo)

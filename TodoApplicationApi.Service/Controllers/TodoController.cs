@@ -50,5 +50,37 @@ public class TodoController : ControllerBase
 			return StatusCode(StatusCodes.Status500InternalServerError, response);
 		}
 	}
+
+	[HttpGet("{id}")]
+
+	public async Task<ActionResult<BaseResponseContract<Todo>>> GetTodoByIdAsync(int id)
+	{
+		BaseResponseContract<Todo> response = new BaseResponseContract<Todo>();
+
+		try
+		{
+			Todo todo = await _todoService.GetTodoByIdAsync(id);
+
+			response.Data = todo;
+			response.Message = "Successfully retrieved todo";
+			response.Success = true;
+
+			return Ok(response);
+		}
+		catch(EntityNotFoundException e)
+		{
+			response.Message = e.Message;
+			response.Success = false;
+
+			return NotFound(response);
+		}
+		catch(Exception e)
+		{
+			response.Message = e.Message;
+			response.Success = false;
+
+			return StatusCode(StatusCodes.Status500InternalServerError, response);
+		}
+	}
 		
 }

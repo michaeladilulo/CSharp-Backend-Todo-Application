@@ -32,9 +32,16 @@ public class TodoService : TodoInterface
         return todos;
     }
 
-    public Task<Todo> GetTodoByIdAsync(int id)
+    public async Task<Todo> GetTodoByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        Todo todo = await _todoRepository.GetTodoByIdAsync(id);
+
+        if(todo == null)
+        {
+            throw new EntityNotFoundException($"Todo with id {id} could not be found");
+        }
+
+        return todo;
     }
 
     public Task<Todo> UpdateTodoAsync(Todo todo)
