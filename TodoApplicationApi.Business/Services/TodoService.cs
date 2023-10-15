@@ -44,8 +44,8 @@ public class TodoService : TodoInterface
         return todo;
     }
 
-    public Task<Todo> UpdateTodoAsync(Todo todo)
+    public async Task<Todo> UpdateTodoAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        return await _todoRepository.UpdateTodoAsync(todo);
     }
 }

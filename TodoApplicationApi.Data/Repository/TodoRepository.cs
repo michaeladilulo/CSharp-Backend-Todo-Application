@@ -40,8 +40,12 @@ public class TodoRepository : ITodoRepository
         return await _context.Todos.FindAsync(id);
     }
 
-    public Task<Todo> UpdateTodoAsync(Todo todo)
+    public async Task<Todo> UpdateTodoAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        Todo updatedTodo = _context.Todos.First(t => t.Id == todo.Id);
+        updatedTodo.Title = todo.Title;
+
+        await _context.SaveChangesAsync();
+        return updatedTodo;
     }
 }

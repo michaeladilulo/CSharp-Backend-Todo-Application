@@ -1,13 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using TodoApplicationApi.TodoApplicationApi.Contracts.Create;
 
 namespace TodoApplicationApi.TodoApplicationApi.Contracts.Update
 {
-	public class UpdateTodoContract
+	public class UpdateTodoContract : CreateTodoContract
 	{
 
 		[Required]
-		public int Id { get; set; }
+		public string Title { get; set; }
 
 	}
 }
