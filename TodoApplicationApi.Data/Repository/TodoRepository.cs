@@ -16,9 +16,13 @@ public class TodoRepository : ITodoRepository
 		_context = context;
 	}
 
-    public Task<Todo> CreateTodoAsync(Todo todo)
+    public async Task<Todo> CreateTodoAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        _context.Todos.Add(todo);
+        _context.SaveChanges();
+        await _context.SaveChangesAsync();
+
+        return todo;
     }
 
     public Task<Todo> DeleteTodoByIdAsync(Todo todo)

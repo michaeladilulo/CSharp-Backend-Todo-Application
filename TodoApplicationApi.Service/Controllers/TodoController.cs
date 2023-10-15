@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using TodoApplicationApi.TodoApplicationApi.Contracts.Base;
+using TodoApplicationApi.TodoApplicationApi.Contracts.Create;
 using TodoApplicationApi.TodoApplicationApi.DataModel.Models;
 using TodoApplicationApi.TodoApplicationApi.Exceptions;
 using TodoApplicationApi.TodoApplicationApi.Interfaces.TodoInterfaces;
@@ -81,6 +82,44 @@ public class TodoController : ControllerBase
 
 			return StatusCode(StatusCodes.Status500InternalServerError, response);
 		}
+	}
+
+	[HttpPost]
+
+	public async Task<ActionResult<BaseResponseContract<Todo>>> CreateTodoAsync([FromBody] CreateTodoContract createTodoContract)
+	{
+		BaseResponseContract<Todo> response = new BaseResponseContract<Todo>();
+
+		try
+		{
+			Todo todo = new Todo()
+			{
+				Title = createTodoContract.Title,
+				CreatedAt = DateTime.UtcNow,
+				UpdatedAt = DateTime.UtcNow
+			};
+
+			response.Data = await _todoService.CreateTodoAsync(todo);
+			response.Success = true;
+			response.Message = "Todo created successfully";
+
+			return Ok(response);
+		}
+		catch(EntityNotFoundException e)
+		{
+			response.Success = false;
+			response.Message = e.Message;
+
+			return NotFound(response);
+		}
+		catch(Exception e)
+		{
+			response.Success = false;
+			response.Message = e.Message;
+
+			return StatusCode(StatusCodes.Status500InternalServerError, response);
+		}
+
 	}
 		
 }

@@ -15,9 +15,9 @@ public class TodoService : TodoInterface
 		_todoRepository = todoRepository;
 	}
 
-    public Task<Todo> CreateTodoAsync(Todo todo)
+    public async Task<Todo> CreateTodoAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        return await _todoRepository.CreateTodoAsync(todo);
     }
 
     public Task DeleteTodoByIdAsync(int id)
