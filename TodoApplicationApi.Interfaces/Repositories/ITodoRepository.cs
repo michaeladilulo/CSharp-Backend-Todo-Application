@@ -14,7 +14,7 @@ namespace TodoApplicationApi.TodoApplicationApi.Interfaces.Repositories
 
 		public Task<Todo> UpdateTodoAsync(Todo todo);
 
-		public Task<Todo> DeleteTodoByIdAsync(Todo todo);
+		public Task DeleteTodoByIdAsync(Todo todo);
 
 	}
 }

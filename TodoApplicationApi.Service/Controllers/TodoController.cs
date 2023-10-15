@@ -158,5 +158,36 @@ public class TodoController : ControllerBase
             return StatusCode(StatusCodes.Status500InternalServerError, response);
         }
     }
-		
+
+	[HttpDelete("{id}")]
+
+	public async Task<ActionResult> DeleteTodoByIdAsync(int id)
+	{
+
+		BaseResponseContract<Todo> response = new BaseResponseContract<Todo>();
+
+		try
+		{
+			await _todoService.DeleteTodoByIdAsync(id);
+			response.Success = true;
+
+			return Ok(response);
+		}
+        catch (EntityNotFoundException e)
+        {
+            response.Success = false;
+            response.Message = e.Message;
+
+            return NotFound(response);
+        }
+        catch (Exception e)
+        {
+            response.Success = false;
+            response.Message = e.Message;
+
+            return StatusCode(StatusCodes.Status500InternalServerError, response);
+        }
+    }
+
+
 }

@@ -8,7 +8,7 @@ namespace TodoApplicationApi.TodoApplicationApi.Contracts.Update
 	{
 
 		[Required]
-		public string Title { get; set; }
+		public string Title { get; set; } //This ensures that you actually pass in an ID in the fields being edited. Need to ask about this
 
 	}
 }

@@ -20,9 +20,16 @@ public class TodoService : TodoInterface
         return await _todoRepository.CreateTodoAsync(todo);
     }
 
-    public Task DeleteTodoByIdAsync(int id)
+    public async Task DeleteTodoByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        Todo todo = await _todoRepository.GetTodoByIdAsync(id);
+
+        if(todo == null)
+        {
+            throw new EntityNotFoundException($"Todo with the ID {id} could not be found");
+        }
+
+        await _todoRepository.DeleteTodoByIdAsync(todo);
     }
 
     public async Task<List<Todo>> GetAllTodosAsync()

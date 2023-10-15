@@ -25,9 +25,10 @@ public class TodoRepository : ITodoRepository
         return todo;
     }
 
-    public Task<Todo> DeleteTodoByIdAsync(Todo todo)
+    public async Task DeleteTodoByIdAsync(Todo todo)
     {
-        throw new NotImplementedException();
+        _context.Todos.Remove(todo);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<List<Todo>> GetAllTodosAsync()
